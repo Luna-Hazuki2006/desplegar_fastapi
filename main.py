@@ -35,6 +35,8 @@ async def crear(estudiante : Estudiante):
                 status_code=status.HTTP_400_BAD_REQUEST, 
                 detail="No se puede crear un estudiante con una cédula repetida"
             )
+    estudiantes.append(estudiante)
+    return estudiante
         
 @app.put('/estudiante/{cedula}')
 async def actualizar(cedula : str, estudiante : Estudiante): 
